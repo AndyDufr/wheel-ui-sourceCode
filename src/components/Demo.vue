@@ -8,14 +8,14 @@
   <div class="demo-actions">
     <ButtonPart
       @click="codeVisible = !codeVisible"
-      v-if="showCode"
-      @click="showCode = false"
+      v-if="showCodePart"
+      @click="showCodePart = false"
       >隐藏代码</ButtonPart
     >
     <ButtonPart
       @click="codeVisible = !codeVisible"
       v-else
-      @click="showCode = true"
+      @click="showCodePart = true"
       >查看代码</ButtonPart
     >
   </div>
@@ -44,8 +44,8 @@ export default {
   },
   setup() {
     const codeVisible = ref(false);
-    const showCode = ref(true);
-    return { Prism, codeVisible, showCode };
+    const showCodePart = ref(true);
+    return { Prism, codeVisible, showCodePart };
   },
 };
 </script>
