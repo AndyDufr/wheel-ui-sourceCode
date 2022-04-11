@@ -23,8 +23,8 @@ import { Button } from "../../lib/index";
 
 /* 注意：用户请使用以下引入方式 
 
-import { Dialog } from "wheel-ui-amazing";
-import "wheel-ui-amazing/dist/lib/wheel.css";
+import { Dialog } from "wheel-amazing-ui";
+import "wheel-amazing-ui/dist/lib/wheel.css";
 
  */
 

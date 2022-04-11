@@ -10,7 +10,9 @@
           :key="index"
           :ref="
             (el) => {
-              if (title === selected) selectedItem = el;
+              if (el) {
+                if (title === selected) selectedItem = el;
+              }
             }
           "
         >
@@ -32,29 +34,32 @@
 </template>
 <script lang="ts">
 import TabPart from "./TabPart.vue";
-import { ref, onMounted, onUpdated } from "vue";
+import { ref, onMounted, watchEffect } from "vue";
 export default {
   props: {
-    selected: String,
+    selected: {
+      type: String,
+    },
   },
   setup(props, context) {
     const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    const x = () => {
-      setTimeout(() => {
-        const width = selectedItem.value.offsetWidth;
-        indicator.value.style.width = width + "px";
-
-        // indicator positon
-        const left1 = container.value.offsetLeft;
-        const left2 = selectedItem.value.offsetLeft + left1;
-        const left = left2 - left1;
-        indicator.value.style.left = left + "px";
-      }, 0);
-    };
-    onMounted(x);
-    onUpdated(x);
+    onMounted(() => {
+      watchEffect(
+        () => {
+          const { width } = selectedItem.value.getBoundingClientRect();
+          indicator.value.style.width = width + "px";
+          const { left: left1 } = container.value.getBoundingClientRect();
+          const { left: left2 } = selectedItem.value.getBoundingClientRect();
+          const left = left2 - left1;
+          indicator.value.style.left = left + "px";
+        },
+        {
+          flush: "post",
+        }
+      );
+    });
     const defaults = context.slots.default();
     defaults.map((tag) => {
       if (tag.type !== TabPart) {

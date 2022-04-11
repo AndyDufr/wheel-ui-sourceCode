@@ -8,8 +8,8 @@ import { Button } from "../../lib/index";
 
 /* 注意：用户请使用以下引入方式 
 
-import { Button } from "wheel-ui-amazing";
-import "wheel-ui-amazing/dist/lib/wheel.css";
+import { Button } from "wheel-amazing-ui";
+import "wheel-amazing-ui/dist/lib/wheel.css";
 
  */
 export default {
