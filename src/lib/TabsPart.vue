@@ -45,12 +45,13 @@ export default {
       watchEffect(() => {
         // indicator width
         // const selectedWidth = selectedItem.value.getBoundingClientRect().width;
-        const { width } = selectedItem.value.getBoundingClientRect();
+
+        const width = selectedItem.value.offsetWidth;
         indicator.value.style.width = width + "px";
 
         // indicator positon
-        const { left: left1 } = container.value.getBoundingClientRect();
-        const { left: left2 } = selectedItem.value.getBoundingClientRect();
+        const left1 = container.value.offsetLeft;
+        const left2 = selectedItem.value.offsetLeft + left1;
         const left = left2 - left1;
         indicator.value.style.left = left + "px";
       });
@@ -65,7 +66,7 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    const select = (title: string) => {
+    const select = (title) => {
       context.emit("update:selected", title);
     };
     return {

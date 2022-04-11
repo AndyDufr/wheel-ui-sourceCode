@@ -7,16 +7,20 @@
   </div>
   <div class="demo-actions">
     <ButtonPart
-      @click="codeVisible = !codeVisible"
+      @click="
+        codeVisible = !codeVisible;
+        showCodePart = false;
+      "
       v-if="showCodePart"
-      @click="showCodePart = false"
-      >隐藏代码</ButtonPart
+      >查看代码</ButtonPart
     >
     <ButtonPart
-      @click="codeVisible = !codeVisible"
+      @click="
+        codeVisible = !codeVisible;
+        showCodePart = true;
+      "
       v-else
-      @click="showCodePart = true"
-      >查看代码</ButtonPart
+      >隐藏代码</ButtonPart
     >
   </div>
   <div class="demo-code">

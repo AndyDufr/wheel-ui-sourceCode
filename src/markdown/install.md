@@ -2,11 +2,13 @@
 #### 通过 npm 安装
 打开终端运行以下命令：
 
-`npm install wheel-ui`
+`npm install wheel-ui-amazing`
 
 当然，你也可以通过 `yarn` 进行安装
 
-`yarn add wheel-ui`
+`yarn add wheel-ui-amazing`
+
+~~PS: 因为发布 npm 时，重名了，所以加了`-amazing`~~
 
 
 

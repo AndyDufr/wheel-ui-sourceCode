@@ -3,7 +3,7 @@
 
 然后在你的代码中写入下面的代码
 
-`import {Button, Tabs, Switch, Dialog} from "wheel-ui"`
+`import {Button, Tabs, Switch, Dialog} from "wheel-ui-amazing"`
 
 就可以使用我提供的组件了。
 
@@ -18,9 +18,10 @@
 </template>
 
 <script>
-import {Button, Tabs, Switch, Dialog} from "wheel-ui"
+import {Button, Tabs, Switch, Dialog} from "wheel-ui-amazing"
 export default {
   components: {Button}
 }
 </script>
 ```
+[组件列表](#/doc/button)

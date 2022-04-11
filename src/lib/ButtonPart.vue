@@ -14,7 +14,6 @@
 </template>
 
 <script lang="ts">
-// import { computed } from "vue";
 export default {
   props: {
     theme: {
@@ -35,16 +34,6 @@ export default {
     loading: {
       type: Boolean,
       default: false,
-    },
-    setup(props, context) {
-      // classes 未生效 原因未知
-      //   const { theme, size } = props;
-      //   const classes = computed(() => {
-      //     return {
-      //       [`wheel-theme-${theme}`]: theme,
-      //       [`wheel-size-${size}`]: size,
-      //     };
-      //   });
     },
   },
 };

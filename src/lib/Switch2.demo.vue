@@ -1,13 +1,19 @@
 <demo>支持 disabled</demo>
 <template>
-  <SwtichPart v-model:value="bool" disabled />
+  <Switch v-model:value="bool" disabled />
 </template>
 <script lang="ts">
-import { ref } from "vue";
-import SwtichPart from "./SwitchPart.vue";
+import { Switch } from "./index";
 
+/* 注意：用户请使用以下引入方式 
+
+import { Switch } from "wheel-ui-amazing";
+import "wheel-ui-amazing/dist/lib/wheel.css";
+
+ */
+import { ref } from "vue";
 export default {
-  components: { SwtichPart },
+  components: { Switch },
   setup() {
     const bool = ref(false);
     return { bool };

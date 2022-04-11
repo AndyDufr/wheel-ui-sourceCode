@@ -1,5 +1,4 @@
-import { marked } from 'marked';
-// @ts-nocheck
+const marked = require('marked')
 // import path from 'path'
 // import fs from 'fs'
 const path = require('path')

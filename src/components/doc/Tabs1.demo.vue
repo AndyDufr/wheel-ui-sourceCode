@@ -1,16 +1,23 @@
 <demo>Tabs 组件示例</demo>
 <template>
-  <TabsPart v-model:selected="x">
-    <TabPart title="标题1111">内容1</TabPart>
-    <TabPart title="标题2">内容2</TabPart>
-  </TabsPart>
+  <Tabs v-model:selected="x">
+    <Tab title="标题1111">内容1</Tab>
+    <Tab title="标题2">内容2</Tab>
+  </Tabs>
 </template>
 <script lang="ts">
-import TabsPart from "../../lib/TabsPart.vue";
-import TabPart from "../../lib/TabPart.vue";
+import { Tabs } from "../../lib/index";
+import { Tab } from "../../lib/index";
+
+/* 注意：用户请使用以下引入方式 
+
+import { Tabs,Tab } from "wheel-ui-amazing";
+import "wheel-ui-amazing/dist/lib/wheel.css";
+
+ */
 import { ref } from "vue";
 export default {
-  components: { TabsPart, TabPart },
+  components: { Tabs, Tab },
   setup() {
     const x = ref("标题1111");
     return { x };
