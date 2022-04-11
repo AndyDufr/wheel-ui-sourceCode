@@ -1,6 +1,6 @@
 {
   "name": "wheel-ui-amazing",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "files": [
     "dist/lib/*"
   ],
@@ -17,8 +17,8 @@
     "github-markdown-css": "^4.0.0",
     "marked": "^1.1.1",
     "prismjs": "^1.21.0",
-    "vue": "^3.0.0",
-    "vue-router": "4.0.14"
+    "vue-router": "4.0.14",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.0-rc.1",

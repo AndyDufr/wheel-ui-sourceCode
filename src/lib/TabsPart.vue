@@ -32,7 +32,7 @@
 </template>
 <script lang="ts">
 import TabPart from "./TabPart.vue";
-import { ref, onMounted, watchEffect } from "vue";
+import { ref, onMounted, onUpdated } from "vue";
 export default {
   props: {
     selected: String,
@@ -41,11 +41,8 @@ export default {
     const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    onMounted(() => {
-      watchEffect(() => {
-        // indicator width
-        // const selectedWidth = selectedItem.value.getBoundingClientRect().width;
-
+    const x = () => {
+      setTimeout(() => {
         const width = selectedItem.value.offsetWidth;
         indicator.value.style.width = width + "px";
 
@@ -54,9 +51,10 @@ export default {
         const left2 = selectedItem.value.offsetLeft + left1;
         const left = left2 - left1;
         indicator.value.style.left = left + "px";
-      });
-    });
-
+      }, 0);
+    };
+    onMounted(x);
+    onUpdated(x);
     const defaults = context.slots.default();
     defaults.map((tag) => {
       if (tag.type !== TabPart) {

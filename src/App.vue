@@ -14,9 +14,6 @@ export default {
     const asideVisible = ref(deviceWidth >= 500 ? true : false);
     provide("asideVisible", asideVisible);
     router.afterEach((to, from) => {
-      console.log(to);
-      console.log(from);
-
       if (deviceWidth <= 500) asideVisible.value = false;
     });
   },
